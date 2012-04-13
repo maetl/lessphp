@@ -1,0 +1,11 @@
+{
+    "name": "maetl/less",
+	"type": "library",
+    "description": "Autoload compatible port of LessPHP by Leaf Corcoran",
+    "authors": [
+        {
+            "name": "Leaf Corcoran",
+            "email": "leafot@gmail.com>"
+        }
+    ]
+}
