@@ -32,7 +32,7 @@
  *    - compiling: lessc::compileBlock()
  *
  */
-class LessCompiler {
+class Less_Compiler {
 	public static $VERSION = "v0.3.4";
 	protected $buffer;
 	protected $count;
@@ -2289,7 +2289,7 @@ class LessCompiler {
 
 	// create a child parser (for compiling an import)
 	protected function createChild($fname) {
-		$less = new LessCompiler($fname);
+		$less = new Less_Compiler($fname);
 		$less->importDir = array_merge((array)$less->importDir, (array)$this->importDir);
 		$less->indentChar = $this->indentChar;
 		$less->compat = $this->compat;
@@ -2315,7 +2315,7 @@ class LessCompiler {
 	// inject array of unparsed strings into environment as variables
 	protected function injectVariables($args) {
 		$this->pushEnv();
-		$parser = new LessCompiler();
+		$parser = new Less_Compiler();
 		foreach ($args as $name => $str_value) {
 			if ($name{0} != '@') $name = '@'.$name;
 			$parser->count = 0;
@@ -2462,7 +2462,7 @@ class LessCompiler {
 	// returns true when it compiles, false otherwise
 	public static function ccompile($in, $out) {
 		if (!is_file($out) || filemtime($in) > filemtime($out)) {
-			$less = new LessCompiler($in);
+			$less = new Less_Compiler($in);
 			file_put_contents($out, $less->parse());
 			return true;
 		}
@@ -2521,7 +2521,7 @@ class LessCompiler {
 
 		if ($root !== null) {
 			// If we have a root value which means we should rebuild.
-			$less = new LessCompiler($root);
+			$less = new Less_Compiler($root);
 			$out = array();
 			$out['root'] = $root;
 			$out['compiled'] = $less->parse();

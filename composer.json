@@ -8,5 +8,7 @@
             "email": "leafot@gmail.com>"
         }
     ],
-	"autoload": {"classmap": ""}
+	"autoload": {
+		"psr-0": { "Less": "/" }
+	}
 }
