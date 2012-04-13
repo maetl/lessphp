@@ -8,7 +8,5 @@
             "email": "leafot@gmail.com>"
         }
     ],
-	{
-	  "autoload": {"classmap": ""}
-	}
+	"autoload": {"classmap": ""}
 }
